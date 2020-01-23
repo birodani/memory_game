@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import {GameModule} from './game/game.module';
+import {MatButtonModule, MatIconModule, MatToolbarModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,10 @@ import {GameModule} from './game/game.module';
     BrowserModule,
     AppRoutingModule,
     GameModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
