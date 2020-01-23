@@ -5,6 +5,8 @@ import { ScoreboardComponent } from './scoreboard/scoreboard.component';
 import { CardComponent } from './card/card.component';
 import {GameRoutingModule} from './game-routing.module';
 import { NgxListLibModule} from 'ngx-list-lib';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {MatCardModule} from '@angular/material';
 
 
 
@@ -13,7 +15,9 @@ import { NgxListLibModule} from 'ngx-list-lib';
   imports: [
     CommonModule,
     GameRoutingModule,
-    NgxListLibModule
+    NgxListLibModule,
+    FlexLayoutModule,
+    MatCardModule
   ]
 })
 export class GameModule { }
