@@ -1,2 +1,16 @@
-<router-outlet></router-outlet>
-afsafd
+<div *ngIf="game">
+  <mat-grid-list [cols]="game.board[0].length">
+    <ng-container *ngFor="let cardRow of game.board; let row = index">
+      <ng-container *ngFor="let card of cardRow; let col = index">
+        <mat-grid-tile>
+          <div class="tile">
+            <div class="card" (click)="game.selectCard(row,col)">
+              <div class="card-front">{{card.value}}</div>
+              <div class="card-back">X</div>
+            </div>
+          </div>
+        </mat-grid-tile>
+      </ng-container>
+    </ng-container>
+  </mat-grid-list>
+  <div>

@@ -6,7 +6,7 @@ import {CardComponent} from './card/card.component';
 import {GameRoutingModule} from './game-routing.module';
 import {NgxListLibModule, NgxListLibIntl} from 'ngx-list-lib';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {MatCardModule} from '@angular/material';
+import {MatCardModule, MatGridListModule} from '@angular/material';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {ScoreboardService} from './scoreboard/scoreboard.service';
 import { TimePipe } from './time.pipe';
@@ -27,7 +27,8 @@ function NgxListLibScoreBoard() {
     GameRoutingModule,
     NgxListLibModule,
     FlexLayoutModule,
-    MatCardModule
+    MatCardModule,
+    MatGridListModule
   ],
   providers: [
     {provide: NgxListLibIntl, useFactory: NgxListLibScoreBoard},
