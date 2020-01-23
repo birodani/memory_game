@@ -22,11 +22,11 @@ Components:
   - home
 
 Modulok:
-	- AppModule (menu / nav, home)
+  - AppModule (menu / nav, home)
   - GameModule (card, game, scoreboard)
   
 Routing:
-	- AppModule:
+  - AppModule:
   	- /home - HomeComponent
     - /game - GameModule
   - GameModule:
