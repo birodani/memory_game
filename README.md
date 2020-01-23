@@ -4,6 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Instructions
 After Step 7 you have to checkout ngx-list-lib project(https://github.com/ricsard/day3-lib), build and link to this project.
+After checkout you must change in lib the BrowserModule and BrowserAnimationModule to CommonModule.
 
 in ngx-list-lib:
   -  npm install
