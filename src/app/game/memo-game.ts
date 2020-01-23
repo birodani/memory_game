@@ -1,13 +1,16 @@
 import {MemoCard} from './models/memo-card.model';
+import {Subject} from 'rxjs';
 
 export class MemoGame {
 
   board: MemoCard[][];
+  gameOver = new Subject();
+  selectedCards: MemoCard[] = [];
 
   constructor() {
     // 4x6
-    const x = 6;
-    const y = 4;
+    const x = 2;
+    const y = 2;
 
     // create new card deck
     const deck = [];
@@ -28,7 +31,49 @@ export class MemoGame {
     }
   }
 
+  canSelectMore() {
+    return this.selectedCards.length < 2;
+  }
+
+  selectForCheck(card: MemoCard) {
+    card.flip();
+    this.selectedCards.push(card);
+  }
+
   selectCard(row: number, column: number) {
-    this.board[row][column].visible = !this.board[row][column].visible;
+    const card = this.board[row][column];
+
+    if (card.found) {
+      return;
+    }
+
+    if (this.canSelectMore()) {
+      this.selectForCheck(card);
+    } else {
+      this.resetSelectedCards();
+      this.selectForCheck(card);
+    }
+
+    this.checkState();
+  }
+
+  checkState() {
+    if (!this.canSelectMore()) {
+      if (this.selectedCards[0].value === this.selectedCards[1].value) {
+        this.selectedCards[0].found = true;
+        this.selectedCards[1].found = true;
+        this.resetSelectedCards();
+
+        if (this.board.every(row => row.every(card => card.found))) {
+          this.gameOver.next();
+          this.gameOver.complete();
+        }
+      }
+    }
+  }
+
+  private resetSelectedCards() {
+    this.selectedCards.forEach(card => card.found || card.flip());
+    this.selectedCards = [];
   }
 }

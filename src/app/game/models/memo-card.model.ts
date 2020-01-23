@@ -3,7 +3,11 @@ export class MemoCard {
   visible = false;
   found = false;
 
-  constructor(value){
+  constructor(value) {
     this.value = value;
+  }
+
+  flip() {
+    this.visible = !this.visible;
   }
 }
