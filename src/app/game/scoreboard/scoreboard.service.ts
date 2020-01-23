@@ -14,11 +14,11 @@ export class ScoreboardService {
     return this.http.get<ScoreboardItem[]>(`${environment.baseUrl}`);
   }
 
-  saveScoreboard() {
-    this.http.post<any>(`${environment.baseUrl}`, {});
+  saveScoreboard(scoreboardItem: ScoreboardItem) {
+    return this.http.post<any>(`${environment.baseUrl}`, scoreboardItem);
   }
 
   resetScoreBoard() {
-    this.http.get<any>(`${environment.baseUrl}/reset`);
+    return this.http.get<any>(`${environment.baseUrl}/reset`);
   }
 }
