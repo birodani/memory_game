@@ -1,6 +1,26 @@
-# Day4AppFlex
+# Memory Game
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
+
+## App structure
+Components:
+  - card
+  - game
+  - scoreboard
+  - menu / nav
+  - home
+
+Modulok:
+	- AppModule (menu / nav, home)
+  - GameModule (card, game, scoreboard)
+  
+Routing:
+	- AppModule:
+  	- /home - HomeComponent
+    - /game - GameModule
+  - GameModule:
+  	- / - GameComponent
+    - /scoreboard - ScoreBoard
 
 ## Development server
 
