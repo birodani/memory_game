@@ -1,1 +1,6 @@
-<p>card works!</p>
+<div class="tile">
+  <div class="card" [@stateVisible]="card.visible" (click)="cardSelcted.emit()">
+    <div class="card-front">{{card.value}}</div>
+    <div class="card-back">X</div>
+  </div>
+</div>

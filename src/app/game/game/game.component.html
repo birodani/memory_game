@@ -3,12 +3,8 @@
     <ng-container *ngFor="let cardRow of game.board; let row = index">
       <ng-container *ngFor="let card of cardRow; let col = index">
         <mat-grid-tile>
-          <div class="tile">
-            <div class="card" [@stateVisible]="card.visible" (click)="game.selectCard(row,col)">
-              <div class="card-front">{{card.value}}</div>
-              <div class="card-back">X</div>
-            </div>
-          </div>
+          <app-card [card]="card" (click)="game.selectCard(row,col)">
+          </app-card>
         </mat-grid-tile>
       </ng-container>
     </ng-container>
