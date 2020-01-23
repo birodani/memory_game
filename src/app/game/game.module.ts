@@ -12,7 +12,7 @@ import {MatCardModule} from '@angular/material';
 function NgxListLibScoreBoard() {
   const intl = new NgxListLibIntl();
   intl.listTitle = 'ScoreBoard';
-  intl.listTitleHeader = (i) => `${i + 1}. hellyezett`;
+  intl.listItemHeader = (i) => `${i + 1}. hellyezett`;
   return intl;
 }
 
