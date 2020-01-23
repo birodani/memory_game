@@ -1,9 +1,12 @@
 <div fxLayout="row" fxLayoutAlign="space-around">
-  <mat-card fxFlex="80%" >
+  <mat-card fxFlex="80%">
     <mat-card-content>
       <ngx-list-lib *ngIf="$itemObs | async as items" [items]=items>
         <ng-template ngxListItemTpl let-item="item">
-          {{item.name}}: {{item.time}}
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <div>{{item.name}}: {{item.time}}</div>
+            <div>{{item.timestamp | date: 'yyyy.MM.dd'}}</div>
+          </div>
         </ng-template>
       </ngx-list-lib>
     </mat-card-content>

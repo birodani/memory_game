@@ -14,7 +14,7 @@ import {ScoreboardService} from './scoreboard/scoreboard.service';
 function NgxListLibScoreBoard() {
   const intl = new NgxListLibIntl();
   intl.listTitle = 'ScoreBoard';
-  intl.listItemHeader = (i) => `${i + 1}. hellyezett`;
+  intl.listItemHeader = (i) => `${i + 1}. helyezett`;
   return intl;
 }
 
