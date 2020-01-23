@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import {Routes, RouterModule, NoPreloading} from '@angular/router';
 import {HomeComponent} from './home/home.component';
 
 
@@ -10,7 +10,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,
+{preloadingStrategy: NoPreloading,    // default: no, PreloadAllModules --> actual is loaded, then he pull other modules in the background
+        scrollPositionRestoration: 'top'      // after navigation scroll position, enable--> where it was last time, top--> set to 0
+    }
+    )],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
