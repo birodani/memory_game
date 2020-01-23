@@ -4,6 +4,7 @@ import { GameComponent } from './game/game.component';
 import { ScoreboardComponent } from './scoreboard/scoreboard.component';
 import { CardComponent } from './card/card.component';
 import {GameRoutingModule} from './game-routing.module';
+import { NgxListLibModule} from 'ngx-list-lib';
 
 
 
@@ -11,7 +12,8 @@ import {GameRoutingModule} from './game-routing.module';
   declarations: [GameComponent, ScoreboardComponent, CardComponent],
   imports: [
     CommonModule,
-    GameRoutingModule
+    GameRoutingModule,
+    NgxListLibModule
   ]
 })
 export class GameModule { }

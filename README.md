@@ -2,6 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
 
+## Instructions
+After Step 7 you have to checkout ngx-list-lib project(https://github.com/ricsard/day3-lib), build and link to this project.
+
+in ngx-list-lib:
+  -  npm install
+  -  npm build 
+  -  npm link
+
+in our project:
+  -  npm link ngx-list-lib
+
 ## App structure
 Components:
   - card
