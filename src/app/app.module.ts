@@ -7,7 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import {GameModule} from './game/game.module';
-import {MatButtonModule, MatIconModule, MatToolbarModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatIconModule, MatToolbarModule} from '@angular/material';
+import {FlexLayoutModule, FlexModule} from '@angular/flex-layout';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,10 +21,13 @@ import {MatButtonModule, MatIconModule, MatToolbarModule} from '@angular/materia
     BrowserModule,
     AppRoutingModule,
     GameModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatToolbarModule,
+    FlexLayoutModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
