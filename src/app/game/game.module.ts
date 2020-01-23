@@ -7,6 +7,8 @@ import {GameRoutingModule} from './game-routing.module';
 import {NgxListLibModule, NgxListLibIntl} from 'ngx-list-lib';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatCardModule} from '@angular/material';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {ScoreboardService} from './scoreboard/scoreboard.service';
 
 
 function NgxListLibScoreBoard() {
@@ -20,13 +22,15 @@ function NgxListLibScoreBoard() {
   declarations: [GameComponent, ScoreboardComponent, CardComponent],
   imports: [
     CommonModule,
+    HttpClientModule,
     GameRoutingModule,
     NgxListLibModule,
     FlexLayoutModule,
     MatCardModule
   ],
   providers: [
-    {provide: NgxListLibIntl, useFactory: NgxListLibScoreBoard}
+    {provide: NgxListLibIntl, useFactory: NgxListLibScoreBoard},
+    ScoreboardService
   ]
 })
 export class GameModule { }

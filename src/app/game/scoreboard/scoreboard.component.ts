@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ScoreboardService} from './scoreboard.service';
 
 @Component({
   selector: 'app-scoreboard',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScoreboardComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public scoreboardService: ScoreboardService) { }
+  $itemObs;
   ngOnInit() {
+    this.$itemObs = this.scoreboardService.getScoreboard();
   }
 
 }
