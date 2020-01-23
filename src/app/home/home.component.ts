@@ -8,7 +8,8 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
 
-  form = new FormGroup({nickName: new FormControl('', Validators.required)});
+  // @ts-ignore
+  form = new FormGroup({nickName: new FormControl('', [Validators.required, Validators.minLength(4)])});
 
   constructor() {
   }
@@ -16,4 +17,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  start() {
+    console.log(this.form.value);
+  }
 }
