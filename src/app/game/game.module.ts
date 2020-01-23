@@ -29,5 +29,4 @@ function NgxListLibScoreBoard() {
     {provide: NgxListLibIntl, useFactory: NgxListLibScoreBoard}
   ]
 })
-export class GameModule {
-}
+export class GameModule { }
