@@ -4,7 +4,7 @@
       <ngx-list-lib *ngIf="$itemObs | async as items" [items]=items>
         <ng-template ngxListItemTpl let-item="item">
           <div fxLayout="row" fxLayoutAlign="space-between">
-            <div>{{item.name}}: {{item.time}}</div>
+            <div>{{item.name}}: {{item.time | time}}</div>
             <div>{{item.timestamp | date: 'yyyy.MM.dd'}}</div>
           </div>
         </ng-template>

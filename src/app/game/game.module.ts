@@ -9,6 +9,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatCardModule} from '@angular/material';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {ScoreboardService} from './scoreboard/scoreboard.service';
+import { TimePipe } from './time.pipe';
 
 
 function NgxListLibScoreBoard() {
@@ -19,7 +20,7 @@ function NgxListLibScoreBoard() {
 }
 
 @NgModule({
-  declarations: [GameComponent, ScoreboardComponent, CardComponent],
+  declarations: [GameComponent, ScoreboardComponent, CardComponent, TimePipe],
   imports: [
     CommonModule,
     HttpClientModule,
