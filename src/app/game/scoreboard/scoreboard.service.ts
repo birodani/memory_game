@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
 import {ScoreboardItem} from './models/scoreboard-item.model';
-import {GameModule} from '../game.module';
 
 @Injectable()
 export class ScoreboardService {
@@ -11,11 +10,11 @@ export class ScoreboardService {
   }
 
   getScoreboard() {
-    return this.http.get<ScoreboardItem[]>(`${environment.baseUrl}`);
+    return this.http.get<ScoreboardItem[]>(`${environment.baseUrl}/api/scoreBoard`);
   }
 
   saveScoreboard(scoreboardItem: ScoreboardItem) {
-    return this.http.post<any>(`${environment.baseUrl}`, scoreboardItem);
+    return this.http.post<any>(`${environment.baseUrl}/api/scoreBoard`, scoreboardItem);
   }
 
   resetScoreBoard() {
